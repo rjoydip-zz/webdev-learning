@@ -1,5 +1,7 @@
 # webdev-learning
 
+[![Deploy to GitHub Pages](https://github.com/rjoydip/webdev-learning/actions/workflows/deploy.yml/badge.svg)](https://github.com/rjoydip/webdev-learning/actions/workflows/deploy.yml)
+
 Webdev Learning resources repository
 
 ## Installation
