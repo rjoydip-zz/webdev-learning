@@ -1,0 +1,39 @@
+---
+sidebar_position: 8
+---
+
+# Entity Migration
+
+```sh
+typeorm migration:generate -n CatRefactoring
+```
+
+```sh
+typeorm migration:run
+```
+
+```sh
+typeorm migration:revert
+```
+
+**Migration Code :**
+
+```ts
+import {MigrationInterface, QueryRunner} from "typeorm";
+
+export class CatRefactoring1551356795221 implements MigrationInterface {
+
+    public async up(queryRunner: QueryRunner): Promise<any> {
+        await queryRunner.query(`ALTER TABLE "cat" ADD "owner" integer`);
+        await queryRunner.query(`ALTER TABLE "cat"
+            ADD CONSTRAINT "FK_2f0dc6d9adb7bc6026f9acf5ba1"
+            FOREIGN KEY ("owner") REFERENCES "owner"("id")`);
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<any> {
+        await queryRunner.query(`ALTER TABLE "cat"
+            DROP CONSTRAINT "FK_2f0dc6d9adb7bc6026f9acf5ba1"`);
+        await queryRunner.query(`ALTER TABLE "cat" DROP COLUMN "owner"`);
+    }
+}
+```

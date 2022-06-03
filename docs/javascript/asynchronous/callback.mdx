@@ -1,0 +1,30 @@
+---
+sidebar_position: 2
+---
+
+# Callback
+
+```js
+function callbackFn(filename, callback) {
+  const isError = false;
+
+  // complex code logic
+  if (isError) {
+    callback(Error("Error occured from callbackFn"), null);
+  } else {
+    callback(null, filename);
+  }
+}
+```
+
+**Function calls :**
+
+```js
+callbackFn(FILE_NAME, (error, data) => {
+  if (error) {
+    console.log("Error (callbackFn) : ", error);
+  } else {
+    console.log("Data (callbackFn)", data);
+  }
+});
+```

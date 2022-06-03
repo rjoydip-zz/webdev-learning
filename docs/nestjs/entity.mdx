@@ -1,0 +1,44 @@
+---
+sidebar_position: 7
+---
+
+# Entity
+
+```ts
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity()
+export class Cat {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({ length: 500 })
+  name: string;
+
+  @Column('int')
+  age: number;
+
+  @Column()
+  breed: string;
+}
+```
+
+**Service:**
+
+```ts
+@Injectable()
+export class CatsService {
+  constructor(
+    @InjectRepository(Cat)
+    private repository: Repository<Cat>
+  ) {}
+
+  create(cat: Cat) {
+    return this.repository.create(cat);
+  }
+
+  findAll() {
+    return this.repository.find();
+  }
+}
+```

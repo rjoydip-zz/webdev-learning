@@ -1,0 +1,27 @@
+---
+sidebar_position: 12
+---
+
+# Microservices Controller
+
+
+```ts
+@Controller('cats')
+export class CatsController {
+  constructor(
+    @Inject('CATS_SERVICE') private readonly catsService: ClientProxy
+  ) {}
+
+  @Post()
+  async create(
+    @Body(new ValidationPipe()) createCatDto: CreateCatDto
+  ) {
+    return this.client.send({cmd: 'create_cat'}, createCatDto);
+  }
+
+  @Get()
+  async findAll(): Promise<Cat[]> {
+    return this.client.send({cmd: 'get_all_cats'}, null);
+  }
+}
+```

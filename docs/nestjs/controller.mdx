@@ -1,0 +1,29 @@
+---
+sidebar_position: 3
+---
+
+# Controller
+
+<img src="https://media.slid.es/uploads/619264/images/5903692/Controllers_1.png" alt="Nest Controller"/>
+
+```ts
+import { Controller, Get, Post } from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Post()
+  create(): string {
+    return 'This action adds a new cat';
+  }
+
+  @Get()
+  findAll(): string {
+    return 'This action returns all cats';
+  }
+   
+  @Put(':id')
+  changeCat(@Param('id') id: string): string {
+    return `This action changes a #${id} cat`;
+  }
+}
+```

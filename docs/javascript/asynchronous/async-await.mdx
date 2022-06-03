@@ -1,0 +1,32 @@
+---
+sidebar_position: 5
+---
+
+# Async/Await
+
+```js
+async function asyncFn(filename) {
+  const isError = false;
+
+  const data = await externalServiceCall(filename + ".txt");
+
+  if (isError) {
+    return {
+      error: Error("Error occured from fn2"),
+      data: null,
+    };
+  } else {
+    return {
+      error: null,
+      data,
+    };
+  }
+}
+```
+
+**Function calls :**
+
+```js
+const { error, data } = await asyncFn(FILE_NAME);
+console.log(error, data);
+```

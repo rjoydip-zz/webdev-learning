@@ -1,0 +1,25 @@
+---
+sidebar_position: 10
+---
+
+# Routes
+
+```ts
+@Controller()
+export class CatsMicroserviceController {
+  constructor(
+    @InjectRepository(Cat)
+    private repository: Repository<Cat>
+  ) {}
+
+  @MessagePattern({ cmd: 'create_cat' })
+  create(cat: Cat): string {
+    return this.repository.create(cat);
+  }
+
+  @MessagePattern({ cmd: 'get_all_cats' })
+  findAll(): string {
+    return this.repository.find();
+  }
+}
+```

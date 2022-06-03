@@ -1,0 +1,64 @@
+---
+sidebar_position: 5
+---
+
+# Pipes
+
+```ts
+import { IsString, IsInt } from 'class-validator';
+
+export class CreateCatDto {
+  @IsString()
+  readonly name: string;
+
+  @IsInt()
+  readonly age: number;
+
+  @IsString()
+  readonly breed: string;
+}
+```
+
+**Use in controller :**
+
+```ts
+@Controller('cats')
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {}
+
+  @Post()
+  async create(
+    @Body(new ValidationPipe()) createCatDto: CreateCatDto
+  ) {
+    return this.catsService.create(createCatDto);
+  }
+
+  @Get()
+  async findAll(): Promise<Cat[]> {
+    return this.catsService.findAll();
+  }
+}
+```
+
+**Pipes validated JSON :**
+
+```json
+{
+    "statusCode": 400,
+    "error": "Bad Request",
+    "message": [
+        {
+            "target": {
+                "name": "asd",
+                "age": 42,
+                "bread": "sphynx"
+            },
+            "property": "breed",
+            "children": [],
+            "constraints": {
+                "isString": "breed must be a string"
+            }
+        }
+    ]
+}
+```

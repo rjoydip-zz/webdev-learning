@@ -1,0 +1,41 @@
+---
+sidebar_position: 4
+---
+
+# Provider
+
+```ts
+import { Injectable } from '@nestjs/common';
+import { Cat } from './interfaces/cat.interface';
+
+@Injectable()
+export class CatsService {
+  private readonly cats: Cat[] = [];
+
+  create(cat: Cat): number {
+    this.cats.push(cat);
+    return this.cats.length - 1;
+  }
+
+  findAll(): Cat[] {
+    return this.cats;
+  }
+}
+```
+
+```ts
+@Controller('cats')
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {}
+
+  @Post()
+  async create(@Body() createCatDto: CreateCatDto) {
+    return this.catsService.create(createCatDto);
+  }
+
+  @Get()
+  async findAll(): Promise<Cat[]> {
+    return this.catsService.findAll();
+  }
+}
+```

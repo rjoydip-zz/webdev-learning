@@ -1,0 +1,63 @@
+---
+sidebar_position: 3
+---
+
+# Blocking vs Non-blocking
+
+**Synchronous file read:**
+
+```js
+const fs = require('fs');
+
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
+
+console.log(data);
+
+// moreWork(); will run after console.log
+```
+
+**Asynchronous file read:**
+
+```js
+const fs = require('fs');
+
+fs.readFile('/file.md', (error, data) => {
+
+  if (error) throw error; // throw error or use logger to log
+  console.log(data);
+});
+
+// moreWork(); will run before console.log
+```
+
+## Warning on mixing Blocking and Non-blocking code
+
+**Problem:**
+
+```js
+const fs = require('fs');
+
+fs.readFile('/file.md', (err, data) => {
+
+  if (err) throw err;
+  console.log(data);
+});
+
+fs.unlinkSync('/file.md'); // File will get delete first
+```
+
+**Solution: Non-blocking with correct order of execution**
+
+```js
+const fs = require('fs');
+
+fs.readFile('/file.md', (readFileErr, data) => {
+
+  if (readFileErr) throw readFileErr;
+  console.log(data);
+
+  fs.unlink('/file.md', (unlinkErr) => {
+    if (unlinkErr) throw unlinkErr;
+  });
+});
+```

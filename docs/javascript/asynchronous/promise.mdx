@@ -1,0 +1,62 @@
+---
+sidebar_position: 3
+---
+
+# Promise
+
+```js
+async function externalServiceCall(filename) {
+  return new Promise((resolve, reject) => {
+    const isError = false;
+
+    if (isError) {
+      reject(Error("Error occured from externalServiceCall"));
+    } else {
+      resolve(filename);
+    }
+  });
+}
+
+async function promiseFn3() {
+  throw Error("Error Occured from promiseFn3");
+}
+
+async function promiseFn2(filename) {
+  const isError = false;
+  // complex code logic
+  if (isError) {
+    return Promise.reject(Error("Error Occured from promiseFn2"));
+  } else {
+    return Promise.resolve(filename);
+  }
+}
+
+async function promiseFn(filename) {
+  const isError = false;
+  // complex code logic
+  if (isError) {
+    return Promise.reject(Error("Error Occured from promiseFn"));
+  } else {
+    return Promise.resolve(filename);
+  }
+}
+```
+
+**Function calls :**
+
+```ts
+// Promise function reference print
+console.log("promiseFn3 : ", promiseFn3);
+
+promiseFn(FILE_NAME)
+  .then((data) => {
+    console.log("Data 1 (promiseFn) : ", data);
+    return externalServiceCall(FILE_NAME + ".txt");
+  })
+  .then((data) => {
+    console.log("Data 2 (promiseFn) : ", data);
+  })
+  .catch((error) => {
+    console.log("Error (promiseFn) : ", error);
+  });
+```

@@ -1,0 +1,24 @@
+---
+sidebar_position: 11
+---
+
+# Module
+
+```ts
+@Module({
+  imports: [
+    ClientsModule.register([
+      {
+        name: 'CATS_SERVICE',
+        transport: Transport.TCP,
+        options: {
+            host: 'localhost',
+            port: 4200
+        }
+      },
+    ])
+  ]
+  controllers: [CatsController],
+})
+export class CatsModule {}
+```
