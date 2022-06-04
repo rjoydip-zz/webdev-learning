@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Pipes
 
-```ts showLineNumbers
+```ts
 import { IsString, IsInt } from 'class-validator';
 
 export class CreateCatDto {
@@ -24,7 +24,7 @@ export class CreateCatDto {
 
 **Use in controller :**
 
-```ts showLineNumbers
+```ts
 @Controller('cats')
 export class CatsController {
   constructor(private readonly catsService: CatsService) {}
@@ -45,7 +45,7 @@ export class CatsController {
 
 **Pipes validated JSON :**
 
-```json showLineNumbers
+```json
 {
     "statusCode": 400,
     "error": "Bad Request",

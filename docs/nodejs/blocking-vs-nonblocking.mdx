@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 **Synchronous file read:**
 
-```js showLineNumbers
+```js
 const fs = require('fs');
 
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
@@ -21,7 +21,7 @@ console.log(data);
 
 **Asynchronous file read:**
 
-```js showLineNumbers
+```js
 const fs = require('fs');
 
 fs.readFile('/file.md', (error, data) => {
@@ -37,7 +37,7 @@ fs.readFile('/file.md', (error, data) => {
 
 **Problem:**
 
-```js showLineNumbers
+```js
 const fs = require('fs');
 
 fs.readFile('/file.md', (err, data) => {
@@ -51,7 +51,7 @@ fs.unlinkSync('/file.md'); // File will get delete first
 
 **Solution: Non-blocking with correct order of execution**
 
-```js showLineNumbers
+```js
 const fs = require('fs');
 
 fs.readFile('/file.md', (readFileErr, data) => {

@@ -1,11 +1,3 @@
-html[data-theme="light"] {
-  --ifm-table-border-color: var(--c-indigo-30);
-}
-
-html[data-theme="dark"] {
-  --ifm-table-border-color: var(--c-gray-90);
-}
-
 :root {
   --ifm-table-stripe-background: var(--ifm-table-background);
 }

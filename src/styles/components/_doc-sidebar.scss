@@ -28,6 +28,10 @@ html[data-theme="dark"] {
 
 //overrides
 #__docusaurus {
+  .theme-doc-sidebar-container {
+    margin-top: 0;
+  }
+
   [class^="docSidebarContainer"] {
     background: var(--token-primary-bg-c);
 
@@ -35,7 +39,6 @@ html[data-theme="dark"] {
     top: 0;
     margin-block-start: 0;
     will-change: initial;
-
     height: 100vh;
 
     border-inline-end: 1px solid var(--sidebar-border-c);
@@ -79,9 +82,12 @@ html[data-theme="dark"] {
     margin: 0;
 
     li:last-of-type {
-      padding-block-end: 1.5rem;
+      padding-block-end: 0.5rem;
     }
 
+    &-item-collapsible {
+      display: inline-block;
+    }
     .menu__list {
       .menu__link--sublist {
         margin-inline-start: calc(
@@ -110,15 +116,15 @@ html[data-theme="dark"] {
 
   .menu__link {
     font-weight: 500;
-    font-size: 0.813rem;
+    font-size: 1rem;
     line-height: 16px;
     /* identical to box height */
-
     display: flex;
+    flex: 0;
     align-items: center;
     letter-spacing: -0.01em;
-
     transition: opacity 0.2s ease-out;
+    // color: var(--navbar-link-c);
 
     &:not(.menu__link--active:not(.menu__link--sublist)) {
       background: initial;
@@ -162,7 +168,6 @@ html[data-theme="dark"] {
   .theme-doc-sidebar-item-category-level-1 {
     > .menu__link {
       color: var(--sidebar-category-c);
-
       font-weight: 600;
       font-size: 0.938rem;
       line-height: 100%;

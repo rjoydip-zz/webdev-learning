@@ -12,7 +12,7 @@ const config = {
   baseUrl: "/webdev-learning/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
   trailingSlash: true,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -72,10 +72,6 @@ const config = {
       navbar: {
         title: "WebDevL",
         hideOnScroll: true,
-        logo: {
-          alt: "WebDevLearning Logo",
-          src: "logos/logo.svg",
-        },
         items: [
           {
             type: "doc",
@@ -112,13 +108,27 @@ const config = {
             ],
           },
         ],
-        copyright: "Copyright © 2022 - PRESENT",
+        copyright: "Copyright © 2022 - now",
       },
       prism: {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      themes: ["@docusaurus/theme-live-codeblock"],
+      algolia: {
+        appId: 'KOQRQRT3C6',
+        apiKey: 'ce13b8d13cd5b7383b3846dcc614161d',
+        indexName: 'webdev-learning',
+        contextualSearch: true,
+      },
+      themes: ["@docusaurus/theme-live-codeblock", '@docusaurus/theme-search-algolia', [
+        //overriding the standard docusaurus-theme-classic to provide custom schema
+        path.resolve(__dirname, 'docusaurus-theme-classic'),
+        {
+          customCss: [
+            require.resolve('./src/styles/custom.scss'),
+          ],
+        },
+      ],],
     }),
 };
 
