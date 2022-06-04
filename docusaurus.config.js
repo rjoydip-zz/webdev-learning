@@ -8,12 +8,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'WebDevL',
   tagline: 'Webdev Learning',
-  url: 'https://webdev-learning.github.com',
-  baseUrl: '/',
+  url: 'https://rjoydip.github.io/',
+  baseUrl: '/webdev-learning/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
+  trailingSlash: true,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'rjoydip', // Usually your GitHub org/user name.
@@ -95,7 +95,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © 2022 - ${new Date().getFullYear()}. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
