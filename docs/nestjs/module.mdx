@@ -1,10 +1,13 @@
 ---
-sidebar_position: 11
+title: Module
+sidebar_label: Module
+slug: /nestjs/module
+hide_table_of_contents: true
 ---
 
 # Module
 
-```ts
+```ts showLineNumbers
 @Module({
   imports: [
     ClientsModule.register([
@@ -19,6 +22,16 @@ sidebar_position: 11
     ])
   ]
   controllers: [CatsController],
+})
+export class CatsModule {}
+```
+
+<img src="https://media.slid.es/uploads/619264/images/5903965/Modules_1.png" alt="Nest Controller"/>
+
+```ts showLineNumbers
+@Module({
+  controllers: [CatsController],
+  providers: [CatsService],
 })
 export class CatsModule {}
 ```

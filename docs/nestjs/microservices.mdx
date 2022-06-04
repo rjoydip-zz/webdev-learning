@@ -1,5 +1,8 @@
 ---
-sidebar_position: 9
+title: Microservices
+sidebar_label: Microservices
+slug: /nestjs/microservices
+hide_table_of_contents: true
 ---
 
 # Microservices
@@ -10,7 +13,7 @@ sidebar_position: 9
 
 **Example 1:**
 
-```ts
+```ts showLineNumbers
 import { NestFactory } from '@nestjs/core';
 import { Transport } from '@nestjs/microservices';
 import { MicroserviceModule } from './microservice.module';
@@ -28,7 +31,7 @@ bootstrap();
 
 **Example: 2**
 
-```ts
+```ts showLineNumbers
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Transport } from '@nestjs/microservices';

@@ -1,0 +1,15 @@
+{
+  "name": "WebDev Learning",
+  "short_name": "WebDevL",
+  "start_url": "/webdev-learning/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/static/logos/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}

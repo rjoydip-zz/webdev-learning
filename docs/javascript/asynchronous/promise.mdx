@@ -1,10 +1,13 @@
 ---
-sidebar_position: 3
+title: Promise
+sidebar_label: Promise
+slug: /javascript/asynchronous/promise
+hide_table_of_contents: false
 ---
 
 # Promise
 
-```js
+```js showLineNumbers
 async function externalServiceCall(filename) {
   return new Promise((resolve, reject) => {
     const isError = false;
@@ -44,7 +47,7 @@ async function promiseFn(filename) {
 
 **Function calls :**
 
-```ts
+```ts showLineNumbers
 // Promise function reference print
 console.log("promiseFn3 : ", promiseFn3);
 

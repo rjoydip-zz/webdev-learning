@@ -1,10 +1,13 @@
 ---
-sidebar_position: 5
+title: Async/Await
+sidebar_label: Async/Await
+slug: /javascript/asynchronous/async-await
+hide_table_of_contents: false
 ---
 
 # Async/Await
 
-```js
+```js showLineNumbers
 async function asyncFn(filename) {
   const isError = false;
 
@@ -26,7 +29,7 @@ async function asyncFn(filename) {
 
 **Function calls :**
 
-```js
+```js showLineNumbers
 const { error, data } = await asyncFn(FILE_NAME);
 console.log(error, data);
 ```

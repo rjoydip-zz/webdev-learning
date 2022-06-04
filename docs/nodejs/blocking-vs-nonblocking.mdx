@@ -1,12 +1,15 @@
 ---
-sidebar_position: 3
+title: Blocking vs Non-blocking
+sidebar_label: Blocking vs Non-blocking
+slug: /nodejs/blocking-vs-nonblocking
+hide_table_of_contents: true
 ---
 
 # Blocking vs Non-blocking
 
 **Synchronous file read:**
 
-```js
+```js showLineNumbers
 const fs = require('fs');
 
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
@@ -18,7 +21,7 @@ console.log(data);
 
 **Asynchronous file read:**
 
-```js
+```js showLineNumbers
 const fs = require('fs');
 
 fs.readFile('/file.md', (error, data) => {
@@ -34,7 +37,7 @@ fs.readFile('/file.md', (error, data) => {
 
 **Problem:**
 
-```js
+```js showLineNumbers
 const fs = require('fs');
 
 fs.readFile('/file.md', (err, data) => {
@@ -48,7 +51,7 @@ fs.unlinkSync('/file.md'); // File will get delete first
 
 **Solution: Non-blocking with correct order of execution**
 
-```js
+```js showLineNumbers
 const fs = require('fs');
 
 fs.readFile('/file.md', (readFileErr, data) => {

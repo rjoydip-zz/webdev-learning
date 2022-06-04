@@ -1,10 +1,13 @@
 ---
-sidebar_position: 2
+title: Callback
+sidebar_label: Callback
+slug: /javascript/asynchronous/callback
+hide_table_of_contents: false
 ---
 
 # Callback
 
-```js
+```js showLineNumbers
 function callbackFn(filename, callback) {
   const isError = false;
 
@@ -19,7 +22,7 @@ function callbackFn(filename, callback) {
 
 **Function calls :**
 
-```js
+```js showLineNumbers
 callbackFn(FILE_NAME, (error, data) => {
   if (error) {
     console.log("Error (callbackFn) : ", error);
