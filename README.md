@@ -26,6 +26,12 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+## Write header ID in .mdx
+
+```sh
+yarn write-heading-ids --overwrite docs/**/* *.mdx
+```
+
 ## Deployment
 
 Using SSH:
