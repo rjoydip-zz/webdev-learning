@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.JavaScript": {
+    "message": "JavaScript",
+    "description": "The label for category JavaScript in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Asynchronous Javascript": {
+    "message": "Asynchronous Javascript",
+    "description": "The label for category Asynchronous Javascript in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Node.js": {
+    "message": "Node.js",
+    "description": "The label for category Node.js in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Nest.js": {
+    "message": "Nest.js",
+    "description": "The label for category Nest.js in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Databases": {
+    "message": "Databases",
+    "description": "The label for category Databases in sidebar tutorialSidebar"
+  }
+}
