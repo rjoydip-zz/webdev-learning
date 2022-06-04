@@ -94,7 +94,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © 2022 - ${new Date().getFullYear()}. Built with Docusaurus.`,
+        copyright: `Copyright © 2022 - PRESENT`,
       },
       prism: {
         theme: darkCodeTheme,
