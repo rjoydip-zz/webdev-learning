@@ -20,7 +20,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/rjoydip/webdev-learning"
   },
   "copyright": {
-    "message": "Copyright © 2022 - PRESENT",
+    "message": "Copyright © 2022 - now",
     "description": "The footer copyright"
   }
 }

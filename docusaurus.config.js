@@ -80,6 +80,14 @@ const config = {
             label: "Guide",
           },
           { to: "/blog", label: "Blog", position: "left" },
+          {
+            type: "search",
+            position: "right",
+          },
+          /* {
+            type: "separator",
+            position: "right",
+          }, */
         ],
       },
       footer: {
@@ -115,20 +123,22 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       algolia: {
-        appId: 'KOQRQRT3C6',
-        apiKey: 'ce13b8d13cd5b7383b3846dcc614161d',
-        indexName: 'webdev-learning',
+        appId: "KOQRQRT3C6",
+        apiKey: "b8c68a88dba482b6e5ea47bf0250b462",
+        indexName: "prod_WebDevL",
         contextualSearch: true,
       },
-      themes: ["@docusaurus/theme-live-codeblock", '@docusaurus/theme-search-algolia', [
-        //overriding the standard docusaurus-theme-classic to provide custom schema
-        path.resolve(__dirname, 'docusaurus-theme-classic'),
-        {
-          customCss: [
-            require.resolve('./src/styles/custom.scss'),
-          ],
-        },
-      ],],
+      themes: [
+        "@docusaurus/theme-live-codeblock",
+        "@docusaurus/theme-search-algolia",
+        [
+          //overriding the standard docusaurus-theme-classic to provide custom schema
+          path.resolve(__dirname, "docusaurus-theme-classic"),
+          {
+            customCss: [require.resolve("./src/styles/custom.scss")],
+          },
+        ],
+      ],
     }),
 };
 
