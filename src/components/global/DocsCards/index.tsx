@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import './cards.css';
+import './cards.scss';
 import styles from './styles.module.scss';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
