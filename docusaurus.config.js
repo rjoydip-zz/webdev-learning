@@ -56,8 +56,7 @@ const config = {
   ],
   themeConfig: {
     colorMode: {
-      defaultMode: "light",
-      respectPrefersColorScheme: true,
+      defaultMode: "light"
     },
     tableOfContents: {
       minHeadingLevel: 2,

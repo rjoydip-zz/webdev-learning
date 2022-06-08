@@ -1,0 +1,67 @@
+:global {
+  /* html[data-theme='light'] {
+  }
+
+  html[data-theme='dark'] {
+  } */
+
+  #__docusaurus {
+    .playground {
+      margin: 0;
+      padding: 0;
+      .row {
+        margin: 0;
+        .leftContainer {
+          padding: 0;
+        }
+        .editor {
+          display: grid;
+          width: 100%;
+          height: calc(100vh - 20vh);
+          overflow-y: auto;
+        }
+        .rightContainer {
+          padding: 0;
+          .preview {
+            height: calc(100% - 30%);
+            background: var(--c-indigo-20);
+          }
+          .execute {
+            position: absolute;
+            top: 61.8%;
+            right: 40%;
+            button {
+              border: none;
+              font-size: xx-large;
+              background-color: transparent;
+              svg {
+                fill: var(--ifm-link-color);
+              }
+            }
+          }
+          .logsContainer {
+            // background-color: #282c34;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 996px) {
+    #__docusaurus {
+      .playground {
+        .row {
+          .col {
+            --ifm-col-width: 50%;
+          }
+          .rightContainer {
+            .execute {
+              top: 62.8%;
+              right: 48%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
