@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Console, Hook, Unhook } from 'console-feed'
-import { useColorMode } from '@docusaurus/theme-common';
 import { HookedConsole } from 'console-feed/lib/definitions/Console'
+
+import "./logs.module.scss";
 
 const Logs = () => {
   const [logs, setLogs] = useState([]);
-  const { colorMode } = useColorMode();
 
   useEffect(() => {
     setLogs([{
@@ -21,7 +21,7 @@ const Logs = () => {
     return () => { Unhook(windowConsoleRef) }
   }, [])
 
-  return <Console logs={logs} variant={colorMode} />
+  return <div className='logs'><Console logs={logs} variant={"dark"} /></div>
 }
 
 export { Logs }

@@ -85,9 +85,6 @@ const config = {
         },
       ],
     },
-    footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} rjoydip`,
-    },
     prism: {
       theme: darkCodeTheme,
       darkTheme: darkCodeTheme,
