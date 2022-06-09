@@ -1,4 +1,15 @@
 :global {
+  html[data-theme='light'] {
+    --preview-background-color: var(--c-indigo-20);
+  }
+
+  html[data-theme='dark'] {
+
+  }
+
+  :root {
+    --logs-background-color: #35404e;
+  }
   #__docusaurus {
     .playground {
       margin: 0;
@@ -12,12 +23,13 @@
           overflow-y: auto;
         }
         .preview {
+          padding: 1rem;
           height: 70%;
-          background: var(--c-indigo-20);
+          background: var(--preview-background-color);
         }
         .logger {
           height: 30%;
-          background: var(--markdown-text-intro-c);
+          background: var(--logs-background-color);
         }
       }
     }
