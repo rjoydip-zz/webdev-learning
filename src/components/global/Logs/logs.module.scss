@@ -8,19 +8,7 @@
       div[data-method="trace"],
       div[data-method="table"] {
         border: none;
-        margin-left: 0;
         padding: 0;
-        span {
-          font-size: 15px;
-        }
-      }
-
-      div[data-method="warn"],
-      div[data-method="error"] {
-        &:first-child {
-          width: 0;
-          height: 0;
-        }
       }
     }
   }

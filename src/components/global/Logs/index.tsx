@@ -4,7 +4,11 @@ import { HookedConsole } from 'console-feed/lib/definitions/Console'
 
 import "./logs.module.scss";
 
-const Logs = () => {
+const defaultStyles = {
+  BASE_FONT_SIZE: "15px"
+}
+
+const Logs = ({ styles = defaultStyles }) => {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
@@ -21,7 +25,7 @@ const Logs = () => {
     return () => { Unhook(windowConsoleRef) }
   }, [])
 
-  return <div className='logs'><Console logs={logs} variant={"dark"} /></div>
+  return <div className='logs'><Console logs={logs} variant={"dark"} styles={styles} /></div>
 }
 
 export { Logs }

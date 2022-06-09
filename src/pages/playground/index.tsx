@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Layout from '@theme/Layout';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
@@ -8,6 +8,7 @@ import { Logs } from '@site/src/components/global/Logs';
 import "./playground.module.scss"
 
 export default function Home(): JSX.Element {
+  const previewRef = useRef(null);
   const [code, setCode] = useState("console.log('hello world!');");
   const { siteConfig } = useDocusaurusContext();
 
@@ -44,7 +45,7 @@ export default function Home(): JSX.Element {
             <div style={{
               height: "100%",
             }}>
-              <div className='preview'></div>
+              <div id="preview" className='preview' ref={previewRef}></div>
               <div className='logger'>{<Logs />}</div>
             </div>
           </div>
