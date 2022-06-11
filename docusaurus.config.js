@@ -80,6 +80,12 @@ const config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
+          position: "left",
+          to: "/showcase",
+          label: "Showcase",
+          activeBasePath: "showcase",
+        },
+        {
           type: "search",
           position: "right",
         },

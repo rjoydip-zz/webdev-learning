@@ -13,7 +13,7 @@ import "./playground.module.scss"
 import { Logs } from '@site/src/components/global/Logs';
 import { EditorTheme } from './theme';
 
-export default function Home(): JSX.Element {
+export default function PlaygroundPage(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
   return (

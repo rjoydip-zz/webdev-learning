@@ -1,50 +1,37 @@
 html[data-theme="light"] {
-  --docs-card-border-c: var(--c-indigo-30);
+  --card-item-border-c: var(--c-indigo-30);
   --card-heading-color: var(--markdown-text-intro-c);
-  --docs-card-shadow: 0px 1px 2px rgba(2, 8, 20, 0.06),
+  --card-item-shadow: 0px 1px 2px rgba(2, 8, 20, 0.06),
     0px 2px 8px rgba(2, 8, 20, 0.08);
 }
 
 html[data-theme="dark"] {
   --card-heading-color: var(--ifm-link-color);
-  --docs-card-border-c: rgba(43, 0, 0, 0.02);
-  --docs-card-shadow: 0px 1px 2px rgba(184, 120, 120, 0.05),
+  --card-item-border-c: rgba(43, 0, 0, 0.02);
+  --card-item-shadow: 0px 1px 2px rgba(184, 120, 120, 0.05),
     0px 2px 8px rgba(255, 255, 255, 0.1), 0px -1px 2px rgba(255, 255, 255, 0.05),
     0px -2px 8px rgba(255, 255, 255, 0.1);
 }
 
 :root {
-  --token-secondary-bg-c: #fff;
-  --docs-card-bg-c: var(--token-secondary-bg-c);
+  --card-item-bg-c: var(--token-secondary-bg-c);
 }
 
-docs-card {
-  display: block;
+.card-items {
+  display: grid;
   font-size: 12px;
-  max-width: 30em;
-}
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 1.35rem;
 
-docs-card.disabled,
-docs-card[disabled] {
-  position: relative;
-}
-
-docs-card.disabled::after,
-docs-card[disabled]::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(232, 232, 232, 0.5);
-  pointer-events: none;
-  content: "";
+  iframe {
+    overflow: hidden;
+  }
 }
 
 .card {
   color: inherit;
-  background-color: var(--docs-card-bg-c);
-  border: 1px solid var(--docs-card-border-c);
+  background-color: var(--card-item-bg-c);
+  border: 1px solid var(--card-item-border-c);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -61,7 +48,7 @@ docs-card[disabled]::after {
 
 @media (hover: hover) {
   .card[href]:hover {
-    box-shadow: var(--docs-card-shadow);
+    box-shadow: var(--card-item-shadow);
     text-decoration: none;
     :global(.Card-icon-hover) {
       opacity: 1;
@@ -95,11 +82,9 @@ docs-card[disabled]::after {
 
   .Card-icon,
   .Card-iconset__container {
-    width: 48px;
-    height: 48px;
-
+    width: 32px;
+    height: 32px;
     margin-bottom: 1.2em;
-
     border-radius: 50%;
     object-fit: contain;
   }
@@ -135,13 +120,6 @@ docs-card[disabled]::after {
     opacity: 1;
   }
 
-  .Card-ionicon {
-    width: 48px;
-    height: 48px;
-    float: left;
-    margin-right: 1em;
-  }
-
   .Card-content > *:first-child {
     margin-top: 0;
   }
@@ -161,7 +139,7 @@ docs-card[disabled]::after {
   .Card-header {
     font-size: 1.25rem;
     line-height: 1.4;
-    margin: 0 0 0.45em 5em;
+    // margin: 0 0 0.45em 5em;
     font-weight: 600;
     color: var(--card-heading-color);
   }
@@ -192,7 +170,7 @@ docs-card[disabled]::after {
     font-size: 20px;
   }
 
-  aside docs-card {
+  aside card-item {
     max-width: 240px;
   }
 
@@ -206,8 +184,8 @@ docs-card[disabled]::after {
   }
 
   aside .Card-icon {
-    width: 32px;
-    height: 32px;
+    // width: 32px;
+    // height: 32px;
     margin-right: 16px;
     margin-bottom: 0;
     grid-area: icon;

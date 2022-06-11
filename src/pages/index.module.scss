@@ -1,4 +1,5 @@
 :global {
+
   html[data-theme='light'] {
     --token-heading-color: var(--markdown-text-intro-c);
   }
@@ -8,7 +9,7 @@
   }
 
   .hero {
-    padding: 4rem 0;
+    padding: 0;
     text-align: center;
     position: relative;
     overflow: hidden;

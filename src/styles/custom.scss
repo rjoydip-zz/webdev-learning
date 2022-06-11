@@ -13,7 +13,7 @@
 @use "./search";
 @use "./table";
 @use "./tabs";
-// @use "./theme-toggle";
+@use "./theme-toggle";
 @use "./toc";
 
 :root {
@@ -29,6 +29,7 @@
 
 html[data-theme="light"] {
   --token-primary-bg-c: #fff;
+  --token-secondary-bg-c: #fff;
   --ifm-navbar-background-color: var(--token-primary-bg-c);
 }
 

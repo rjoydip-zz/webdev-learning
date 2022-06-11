@@ -1,15 +1,13 @@
+
+html[data-theme="light"] {
+  --preview-background-color: var(--c-indigo-20);
+}
+
+:root {
+  --logs-background-color: #35404e;
+}
+
 :global {
-  html[data-theme='light'] {
-    --preview-background-color: var(--c-indigo-20);
-  }
-
-  html[data-theme='dark'] {
-
-  }
-
-  :root {
-    --logs-background-color: #35404e;
-  }
   #__docusaurus {
     .playground {
       margin: 0;
