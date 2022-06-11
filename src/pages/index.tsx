@@ -6,7 +6,6 @@ import { Footer } from '../components/global/Footer';
 import CardContainer, { CardItem } from '../components/global/Card';
 
 import './index.module.scss';
-import '@ionic/react/css/core.css';
 
 import { FeatureItemType } from '../types';
 
