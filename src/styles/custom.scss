@@ -89,6 +89,10 @@ p {
   color: var(--markdown-text-intro-c);
 }
 
+footer {
+  padding: 1rem !important;
+}
+
 #__docusaurus [class*=docMainContainer_] > .container > .row > .col {
   justify-content: left;
   padding-left: 50px;

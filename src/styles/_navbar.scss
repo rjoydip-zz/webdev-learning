@@ -30,13 +30,6 @@ html[data-theme="dark"] {
 //overrides
 #__docusaurus {
   .navbar {
-    &__link {
-      color: var(--navbar-link-color);
-    }
-
-    &__title {
-      color: var(--navbar-link-color);
-    }
 
     &__inner {
       width: initial;
@@ -53,9 +46,11 @@ html[data-theme="dark"] {
           }
         }
       }
+
       .DocSearch-Button {
         border-radius: 20px;
       }
+
       .cta {
         display: flex;
         align-items: center;

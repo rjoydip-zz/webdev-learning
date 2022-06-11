@@ -1,4 +1,4 @@
-type _type = "video" | "link" | "audio" | "code" | "image" | "pdf" | "markdown"
+type _type = "video" | "link" | "audio" | "code" | "image" | "pdf" | "markdown";
 
 export interface CardPropsType extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
@@ -6,8 +6,8 @@ export interface CardPropsType extends React.HTMLAttributes<HTMLDivElement> {
   icon?: string;
   activeIndex?: number;
   img?: string;
-  size?: 'md' | 'lg';
-  tags?: string[];
+  size?: "md" | "lg";
+  tags: string[];
   markdown?: string;
   type: _type;
 }

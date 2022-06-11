@@ -1,0 +1,12 @@
+:global {
+  .tabs {
+    .tabs__item {
+      font-weight: 600;
+
+      &--active {
+        border-radius: 16px;
+        border: 2px solid;
+      }
+    }
+  }
+}
