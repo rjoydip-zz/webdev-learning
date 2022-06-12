@@ -1,26 +1,26 @@
-type _type = "video" | "link" | "audio" | "code" | "image" | "pdf" | "markdown";
+export type CardType = "video" | "gist" | "image" | "pdf" | "markdown" | "link";
+
+export type CardSize = "md" | "lg";
 
 export interface CardPropsType extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
   header?: string;
   icon?: string;
-  activeIndex?: number;
   img?: string;
-  size?: "md" | "lg";
+  size?: CardSize;
   tags: string[];
-  markdown?: string;
-  type: _type;
-}
-
-export interface ShowcaseItemType extends CardPropsType {
+  type: CardType;
   description?: string;
 }
 
-export type FeatureItemType = {
-  header: string;
-  href: string;
-  type: _type;
-  // Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
-  icon?: string;
-  description: JSX.Element;
+export type ShowcaseItemType = CardPropsType;
+export type FeatureItemType = CardPropsType;
+
+export type ShowcaseDataType = {
+  video: CardPropsType[];
+  gist: CardPropsType[];
+  img: CardPropsType[];
+  pdf: CardPropsType[];
+  markdown: CardPropsType[];
+  others: CardPropsType[];
 };

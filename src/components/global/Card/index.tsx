@@ -7,24 +7,15 @@ import styles from './card.module.scss';
 import { CardPropsType } from '@site/src/types';
 
 const isImageCard = (props: { type: string }) => props.type === 'image';
-const isImageAvailable = (props: { href: string }) => props.href && props.href !== "";
-
-function shouldShowIcon(props: {
-  type: string,
-  href?: string,
-}) {
-  const { type, href } = props;
-  return type === 'link' || type === 'pdf' || type === 'video' || type === 'markdown' ? true : isImageCard(props) && (href === undefined || href === "") ? true : false;
-}
 
 function CardItem(props: CardPropsType): JSX.Element {
   const content = (
     <>
-      {(props.type === "image" && props.href) && <img src={useBaseUrl(props.href)} className="Card-image" />}
+      {/* {(props.type === "image" && props.href) && <img src={useBaseUrl(props.href)} className="Card-image" />} */}
       <div className="Card-container">
         {(props.icon) && (
           <div className="Card-icon-row">
-            {(props.icon && shouldShowIcon(props)) && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />}
+            {props.icon && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />}
           </div>
         )}
         {props.header && props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>}
@@ -39,6 +30,7 @@ function CardItem(props: CardPropsType): JSX.Element {
     'Card-with-video': props.type === 'video',
     'Card-with-pdf': props.type === 'pdf',
     'Card-with-link': props.type === 'link',
+    'Card-with-gist': props.type === 'gist',
     'Card-with-markdown': props.type === 'markdown',
     'Card-size-lg': props.size === 'lg',
     [props.className]: props.className,
