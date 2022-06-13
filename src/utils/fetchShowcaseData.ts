@@ -11,7 +11,8 @@ import { CardPropsType, ShowcaseDataType } from "../types";
 function getLinks(html: string) {
   const $ = cheerio.load(html);
   return $("ul > li > a")
-    .map((_, el) => ({
+    .map((i, el) => ({
+      index: i,
       href: $(el).attr("href"),
       description: humanizeString($(el).text()),
     }))
@@ -90,14 +91,23 @@ export async function get(url: string): Promise<CardPropsType[]> {
       icon: "/svg/image.svg",
       tags: ["image"],
     }));
-
-  /* console.log("total links", _links.length);
-  console.log("video", collections.video.length);
-  console.log("pdf", collections.pdf.length);
-  console.log("markdown", collections.markdown.length);
-  console.log("img", collections.img.length);
-  console.log("gist", collections.gist.length);
-  console.log("others", collections.others.length); */
+  collections.others = _links
+    .filter(
+      (n) =>
+        !collections.video.some((n2) => n.href === n2.href) &&
+        !collections.gist.some((n2) => n.href === n2.href) &&
+        !collections.pdf.some((n2) => n.href === n2.href) &&
+        !collections.markdown.some((n2) => n.href === n2.href) &&
+        !collections.img.some((n2) => n.href === n2.href)
+    )
+    .map((item) => ({
+      ...item,
+      header: "",
+      size: "md",
+      type: "link",
+      icon: "/svg/link.svg",
+      tags: ["link"],
+    }));
 
   return Promise.resolve([
     ...collections.video,
