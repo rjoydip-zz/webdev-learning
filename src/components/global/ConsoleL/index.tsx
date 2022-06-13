@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Console, Hook, Unhook } from 'console-feed'
 import { HookedConsole } from 'console-feed/lib/definitions/Console'
 
-import "./logs.module.scss";
+import "./consoleL.module.scss";
 
 const defaultStyles = {
   BASE_FONT_SIZE: "15px"
 }
 
-const Logs = ({ styles = defaultStyles }) => {
-  const [logs, setLogs] = useState([]);
+const ConsoleL = ({ styles = defaultStyles }) => {
+  const [consoleL, setLogs] = useState([]);
 
   useEffect(() => {
     setLogs([{
@@ -25,7 +25,7 @@ const Logs = ({ styles = defaultStyles }) => {
     return () => { Unhook(windowConsoleRef) }
   }, [])
 
-  return <div className='logs'><Console logs={logs} variant={"dark"} styles={styles} /></div>
+  return <div className='consoleL'><Console logs={consoleL} variant={"dark"} styles={styles} /></div>
 }
 
-export { Logs }
+export { ConsoleL }

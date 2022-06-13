@@ -11,7 +11,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import "./playground.module.scss"
 
-import { Logs } from '@site/src/components/global/Logs';
+import { ConsoleL } from '@site/src/components/global/ConsoleL';
 import { EditorTheme } from './theme';
 
 export default function PlaygroundPage(): JSX.Element {
@@ -30,7 +30,7 @@ export default function PlaygroundPage(): JSX.Element {
             <SplitPane split="horizontal" defaultSize="60%">
               <div className='preview'><LivePreview />
                 <LiveError /></div>
-              <div className='logger'><Logs /></div>
+              <div className='console'><ConsoleL /></div>
             </SplitPane>
           </SplitPane>
         </div>
