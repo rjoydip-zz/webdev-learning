@@ -92,6 +92,9 @@ p {
 
 footer {
   padding: 1rem !important;
+  span {
+    color: var(--ifm-footer-link-color);
+  }
 }
 
 .loader {
