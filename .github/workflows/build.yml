@@ -1,9 +1,8 @@
 name: Build
 
 on:
-  pull_request:
-    branches:
-      - main
+  - pull_request
+  - push
 
 jobs:
   test-deploy:
