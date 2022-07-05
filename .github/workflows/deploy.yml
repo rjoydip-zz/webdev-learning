@@ -20,7 +20,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
       - run: yarn install
-      - run: yarn build
+      - run: yarn all
       - name: Deploy to Vercel
         run: |
           prodRun=""

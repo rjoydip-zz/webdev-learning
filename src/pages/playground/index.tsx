@@ -7,7 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import "./playground.module.scss";
 
 import { ConsoleL } from "@site/src/components/global/ConsoleL";
-import { EditorTheme } from "./theme";
+import { EditorTheme } from "../../../data/editor-theme.data";
 
 function Window(props): JSX.Element {
   return (

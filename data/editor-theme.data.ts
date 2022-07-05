@@ -93,3 +93,5 @@ export const EditorTheme: PrismTheme = {
     opacity: 1
   }
 };
+
+export default {}
