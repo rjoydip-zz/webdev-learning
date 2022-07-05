@@ -5,8 +5,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "WebDevL",
   tagline: "Webdev Learning",
-  url: "https://rjoydip.github.io/",
-  baseUrl: "/webdev-learning/",
+  url: "https://webdev-learning-788esi49e-rjoydip.vercel.app/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "favicon.ico",
